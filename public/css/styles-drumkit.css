@@ -1,0 +1,78 @@
+
+/* START GLOBAL STYLE.
+________________________________________________________*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #e6e6e6;
+    color: black;
+}
+/* END GLOBAL STYLE.
+________________________________________________________*/
+
+/* navbar */
+.nav-item {
+    list-style: none;
+}
+.nav-link {
+    text-decoration: none;
+}
+
+/* START GLOBAL BODY.
+________________________________________________________*/
+
+/* flexbox */
+.positioning {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: aquamarine;
+}
+
+.container {
+    display: flex;
+    padding: 10px;
+    background-color: slateblue;
+}
+.wrapper {
+    display: flex;
+    align-items: center;
+    border: 2px solid salmon;
+    margin: 5px;
+    padding: 10px;
+    background-color: powderblue;
+    flex-direction: column;
+}
+
+.key {
+    display: inline;
+    justify-content: center;
+    padding: 10px;
+    background-color: palegoldenrod;
+}
+
+
+
+/* END GLOBAL BODY.
+________________________________________________________*/
+.pattern {
+    background-repeat: repeat;
+}
+.wrapper-key{
+    /* this will be scaled up and change color with the class below */
+    transition: all 0.07s;
+}
+.playing {
+    /* this class is added via JS, this will scale up and change color shit of .wrapper-key */
+    transform: scale(1.1);
+    border-color: ghostwhite;
+    box-shadow: 0 0 10px floralwhite;
+}

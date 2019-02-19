@@ -1,0 +1,51 @@
+
+/* START GLOBAL STYLE.
+________________________________________________________*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #e6e6e6;
+    color: black;
+}
+/* END GLOBAL STYLE.
+________________________________________________________*/
+
+/* navbar */
+.nav-item {
+    list-style: none;
+}
+.nav-link {
+    text-decoration: none;
+}
+
+/* START GLOBAL BODY.
+________________________________________________________*/
+/* flexbox */
+.positioning {
+    background-color: aquamarine;
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    
+    padding: 10px;
+    background-color: palegoldenrod;
+}
+.wrapper {
+    display: flex;
+    background-color: powderblue;
+    flex-direction: row;
+}
+
+.nav-item {
+    list-style: none;
+}
