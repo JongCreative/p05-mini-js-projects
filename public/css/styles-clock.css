@@ -43,11 +43,13 @@ ________________________________________________________*/
 }
 
 .container {
+    padding: 10px;
+    background-color: palegoldenrod;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    background-color: slateblue;
+    /* background-color: slateblue; */
 }
 .wrapper {
     display: flex;
@@ -65,8 +67,7 @@ ________________________________________________________*/
 ________________________________________________________*/
 
 .container-clock{
-    padding: 10px;
-    background-color: palegoldenrod;
+
     position: relative;
     width: 150px;
     height: 100px;

@@ -9,22 +9,26 @@
     
 <!--END HEAD & HEADER.
 ------------------------------------------------------------>
-<main class="positioning positioning-main">
-	<div class="container container-clock">
-        <article class="wrapper wrapper-badge">
-            klokje
+<main class="positioning positioning-temperature">
+	<div class="container container-temperature">
+        <article class="wrapper wrapper2">
+            converter
         </article>
-        <article class="wrapper wrapper-clock">
-            <span id="hour"></span>
-            <span id='minutes'></span>
-            <span id='seconds'></span>
+        <article class="wrapper wrapper-celcius">
+            <input id="celcius" type="number" placeholder="celcius">
+        </article>
+        <article class="wrapper wrapper-fahrenheit">
+            <input id="fahrenheit" placeholder="fahrenheit">
+        </article>
+        <article class="wrapper wrapper-kelvin">
+            <input id="kelvin" placeholder="kelvin">
         </article>
     </div>
 </main>
 
 <!--START FOOTER.
 ------------------------------------------------------------>
-	<script src="../js/script-clock.js"></script>
+	<script src="../js/script-temperature.js"></script>
 	<?php include "../templates/footer.php"; ?>
 
 <!--END FOOTER.
