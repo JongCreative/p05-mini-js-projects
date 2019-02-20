@@ -21,16 +21,16 @@
                 </article>
                 <article class="textToSpeech Speech-2">
                     <label class="textToSpeech label-speech" for="rate">Rate</label>
-                    <section class="textToSpeech value-rate">1</section>
-                    <input class="textToSpeech rate" type="range" min="0.5" max="2" value="1" step="0.1">
+                    <section class="textToSpeech rate-value">1</section>
+                    <input class="textToSpeech rate-speech" type="range" min="0.5" max="2" value="1" step="0.1">
                 </article>
                 <article class="textToSpeech Speech-3">
                     <label class="textToSpeech label-speech" for="pitch">Pitch</label>
-                    <section class="textToSpeech value-pitch">1</section>
-                    <input class="textToSpeech pitch" type="range" min="0" max="2" value="1" step="0.1">
+                    <section class="textToSpeech pitch-value">1</section>
+                    <input class="textToSpeech pitch-speech" type="range" min="0" max="2" value="1" step="0.1">
                 </article>
                 <article class="textToSpeech Speech-4">
-                    <select class="textToSpeech voice-select"></select>
+                    <select class="textToSpeech select-voice"></select>
                 </article>
                 <article class="textToSpeech Speech-5">
                     <button class="textToSpeech btn">Speak It</button>
