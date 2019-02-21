@@ -17,7 +17,7 @@
 			<!-- </article> -->
 		</article>
 		<article class="timeline-shit">
-			<div class="inner-timeline inner-timeline1">
+			<div class="innerContainer-timeline inner-timeline1">
 				<article class="wrapper wrapper-timeline">
 					<section class="card timeline-year">date</section>
 					<section class="card timeline-title">title</section>

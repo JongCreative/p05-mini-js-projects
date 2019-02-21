@@ -6,33 +6,42 @@
 console.log('connect');
 
 // DOM elements
+const innerContainerTimeline = document.querySelector('.innerContainer-timeline');
+const wrapperTimeline = document.querySelector('.wrapper-timeline');
 const year = document.querySelector('.timeline-year');
 const title = document.querySelector('.timeline-title');
 const text = document.querySelector('.timeline-text');
 const prev = document.querySelector('.btn-prev');
 const pagination = document.querySelector('.btn-pagination');
 const next = document.querySelector('.btn-next');
-const wrapperTimeline = document.querySelector('.wrapper-timeline');
 
 // empty array to put all availale timeline articles in
 let timelineArticles = [];
 
 /*_________________________________________________________________________________*/
 /*      part 2 create function with arrow ()=>{}
-/*             fetch voices into empty voices[] array
-/*             seperate each array option with <option></option> & set attributes
-/*             display it by append/inserting <option> to <select> as a child
+/*             fetch articles into empty timelineArticles[] array
+/*             seperate each array option with <article></article> & set attributes
+/*             display it by append/inserting <article> to .innerContainerTimeline as a child
 /*_________________________________________________________________________________*/
 
 const getTimelineArticles = () => {
-    timelineArticles = getTimelineArticles;
-}
+    timelineArticles = json.parse(this.getTimelineArticles);
+
+    timelineArticles.forEach(timelineArticle => {
+        const article = document.createElement('article');
+
+    /* to collect info from json and insert into child */
+
+        innerContainerTimeline.appendChild(article);
+    });
+};
 
 /*_________________________________________________________________________________*/
 /*      part 3 create function with arrow ()=>{}
 /*             possible ifs & eliminate them
-/*             seperate each array option with <option></option> & set attributes
-/*             display it by append/inserting <option> to <select> as a child
+/*             connect each array option with <button> & set attributes
+/*             display it by append/inserting <article> to <select> as a child
 /*_________________________________________________________________________________*/
 
 
@@ -42,3 +51,6 @@ const getTimelineArticles = () => {
 /*_________________________________________________________________________________*/
 
 
+/*_________________________________________________________________________________*/
+/*      part 5 counter.
+/*_________________________________________________________________________________*/
