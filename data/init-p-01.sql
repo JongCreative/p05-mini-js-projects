@@ -2,7 +2,7 @@
 
 ---------------------------------------------------------*/
 
-CREATE DATABASE JS_project;
+/* CREATE DATABASE JS_project; */
 
 USE JS_project;
 
