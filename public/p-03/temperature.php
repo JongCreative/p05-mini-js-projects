@@ -4,8 +4,9 @@
 
     <title>temperature converter</title>
     <link rel="stylesheet" href="../css/styles-temperature.css">
+    <link rel="stylesheet" href="../css/styles-index.css">
 
-    <?php //include "../templates/header.php"; ?>
+    <?php include "../templates/header.php"; ?>
     
 <!--END HEAD & HEADER.
 ------------------------------------------------------------>

@@ -3,9 +3,10 @@
     <?php include "../templates/head.php"; ?>
 
     <title>text to speech</title>
-    <link rel="stylesheet" href="../css/styles-textToSpeech.css">
 
-    <?php //include "../templates/header.php"; ?>
+    <link rel="stylesheet" href="../css/styles-index.css">
+
+    <?php include "../templates/header.php"; ?>
     
 <!--END HEAD & HEADER.
 ------------------------------------------------------------>
