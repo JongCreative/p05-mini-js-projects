@@ -1,70 +1,119 @@
-//console.log("hello");
-//https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API
-//https://www.youtube.com/watch?v=ZORXxxP49G8
+/*_________________________________________________________________________________*/
+/*      part 1 connecting to API
+/*             collect all DOM elements
+/*_________________________________________________________________________________*/
 
-/*init
-* access the speech api
-* window.speechSynthesis);
-* console.log(window.speechSynthesis);
-*/
-
-//init speechSynt API
+// initialize API connection
 const synth = window.speechSynthesis;
-//console.log(synth);
 
-//DOM Elements
+// DOM elements
 const textForm = document.querySelector('.form-textToSpeech');
 const textInput = document.querySelector('.text-input');
 const voiceSelector = document.querySelector('.select-voice');
-const rateSpeech = document.querySelector('.rate-speech');
+const rate = document.querySelector('.rate-speech');
 const rateValue= document.querySelector('.rate-value');
-const pitchSpeech= document.querySelector('.pitch-speech');
+const pitch= document.querySelector('.pitch-speech');
 const pitchValue= document.querySelector('.pitch-value');
-//console.log(rateValue);
 
-//Init voices array, we need to fetch the voices
+// empty array to put all availale voices in
 let voices = [];
 
-/*_____________________________________________________________________*/
-/*      part 1 connecting to API and put options in select-list.
-/*_____________________________________________________________________*/
+/*_________________________________________________________________________________*/
+/*      part 2 create function with arrow ()=>{}
+/*             fetch voices into empty voices[] array
+/*             seperate each array option with <option></option> & set attributes
+/*             display it by append/inserting <option> to <select> as a child
+/*_________________________________________________________________________________*/
 
-//const getVoices (){} will read into the API
+
+// function to fetch API voices and display as dropdownlist
 const getVoices = () => {
+    //console.log('start - getVoices');
+
     voices =  synth.getVoices();
-    //console.log(voices);
-
-    //loop (old:for/better:foreach) through voices and create an option for each one in the select-voice class
+    //console.log('fetch - voices and put in the let voices array');
     
+    //now we want to put each option in the select list.
+    //first we create an element to put each array option in 
     voices.forEach(voice => {
-        //create option (DOM)element
         const option = document.createElement('option');
-        //fill option with voice and language
-        option.textContent = voice.name + '('+ voice.lang +')';
+        //console.log('created - <option> element for each voice in the voices array');
 
-        //set needed option attributes
+        //<option>Google Nederlands(nl-NL)</option>
+        //i will use textContent to render each voice option as <b>text only</b>. in stead of innerHTML <b>shown bold</b>
+        option.textContent = voice.name + '('+ voice.lang +')';
+        //set attribute inside the <option data-lang="nl-NL" data-name="Google Nederlands">
         option.setAttribute('data-lang', voice.lang);
         option.setAttribute('data-name', voice.name);
-
-        //append options to the selectlist
-        //we take each itteration and take the option
         voiceSelector.appendChild(option);
-
-        //now all options are available in the selectlist class="select-voice" , coming from synth.voices, yay!
-        //now we'll on work getting it to speak
     });
-}
-//getVoices();
-//why empty array https://stackoverflow.com/questions/21513706/getting-the-list-of-voices-in-speechsynthesis-of-chrome-web-speech-api
+};
 
+/* put in array, without this array will be empty
+* https://stackoverflow.com/questions/21513706/getting-the-list-of-voices-in-speechsynthesis-of-chrome-web-speech-api
+* * */
 getVoices();
 if(synth.onvoiceschanged !== undefined){
     synth.onvoiceschanged = getVoices;
-}
-// now array will be available
+};
+
+/*_________________________________________________________________________________*/
+/*      part 3 create function with arrow ()=>{}
+/*             possible ifs & eliminate them
+/*             seperate each array option with <option></option> & set attributes
+/*             display it by append/inserting <option> to <select> as a child
+/*_________________________________________________________________________________*/
+
+//function to get it to speak
+const speak = () => {
+    console.log('start - speak');
+
+    //check if already
+    if(synth.speaking) {
+        console.error('its already in the process of speaking..');
+        return;
+    }
+
+    if(textInput.value !=='') {
+        console.log('input text field')
+        const speakText = new SpeechSynthesisUtterance(textInput.value);
+        speakText.onend = e => {
+            console.log('Done speaking....');
+        };
+
+        speakText.onerror = e => {
+            console.error('something went wrong');
+        };
+
+        const selectedVoice = voiceSelector.selectedOptions[0].getAttribute('data-name');
+        voices.forEach(voice => {
+          if(voice.name === selectedVoice) {
+              speakText.voice = voice;
+          }              
+        });
+
+            speakText.rate = rate.value;
+            speakText.pitch = pitch.value;
+            synth.speak(speakText);
+    }
+};
+speak();
+
+/*_________________________________________________________________________________*/
+/*      part 4 addEventListeners.
+/*_________________________________________________________________________________*/
 
 
-/*_____________________________________________________________________*/
-/*      part 2 speak it!!.
-/*_____________________________________________________________________*/
+const submitBtn = () => {
+    textForm.addEventListener('submit', e => {
+        e.preventDefault();
+        speak();
+        textInput.blur();
+    })
 
+    rate.addEventListener('change', e => (rate.textContent = rate.value));
+    pitch.addEventListener('change', e => (pitch.textContent = pitch.value));
+    voiceSelector.addEventListener ('change', e => speak());
+};
+
+submitBtn();

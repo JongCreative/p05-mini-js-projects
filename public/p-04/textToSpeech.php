@@ -17,7 +17,7 @@
         <article class="wrapper wrapper-textToSpeech">
             <form class="form-textToSpeech">
                 <article class="textToSpeech Speech-1">
-                    <textarea class="textToSpeech text-input" placeholder="Tell me anything.....&#128521;" autofocus></textarea>
+                    <textarea class="textToSpeech text-input" placeholder="i'll tell you whatever you want to hear.....&#128521;" autofocus></textarea>
                 </article>
                 <article class="textToSpeech Speech-2">
                     <label class="textToSpeech label-speech" for="rate">Rate</label>
