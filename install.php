@@ -8,7 +8,7 @@ require "config.php";
 
 try {
 	$connection = new PDO("mysql:host=$host", $username, $password, $options);
-	$sql = file_get_contents("data/init-p01.sql");
+	$sql = file_get_contents("data/init-preview.sql");
 	$connection->exec($sql);
 	
 	echo "Database and table $dbname created successfully.";
