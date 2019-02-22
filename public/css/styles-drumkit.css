@@ -1,101 +1,15 @@
-
-/* START GLOBAL STYLE.
-________________________________________________________*/
-
-@import url('https://fonts.googleapis.com/css?family=Asap|Orbitron');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    background-color: #e6e6e6;
-    color: black;
-}
-/* END GLOBAL STYLE.
-________________________________________________________*/
-
-/* navbar */
-.wrapper-nav{
-    display: flex;
+.positioning-drumkit{
     justify-content: center;
 }
-.nav-item {
-    list-style: none;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-.nav-link {
-    text-decoration: none;
-    color: black;
-}
-
-/* START GLOBAL BODY.
-________________________________________________________*/
-
-/* flexbox */
-.positioning {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    background: url(../images/prism.png);
-    height: 100vh;
-}
-
-.container {
-    padding: 10px;
-    background-color: palegoldenrod;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.wrapper {
-    display: flex;
-    align-items: center;
-    border: 2px solid salmon;
-    margin: 5px;
-    padding: 10px;
-    background-color: powderblue;
-    flex-direction: column;
-}
-.wrapper2 {
-    padding: 2px 10px;
-    background-color: #ee6666;
-    color: antiquewhite;
-    position: absolute;
-    width: 60%;
-    justify-content: center;
-    font-weight: bold;
-    top: -15px;
-}
-
-.key {
-    display: inline;
-    justify-content: center;
-    padding: 10px;
-    background-color: palegoldenrod;
-}
-
-/* END GLOBAL BODY.
-________________________________________________________*/
 .container-keys {
     flex-direction: row;
-
+    justify-content: center;
+    
 }
 .wrapper-drumkit {
     display: flex;
     flex-direction: row;
-
+    
 }
 .drumkit{
     /* this will be scaled up and change color with the class below */
@@ -117,5 +31,11 @@ kbd {
 }
 
 .container-sounds {
-    display: none;
+    display: none !important;
+}
+.key {
+    display: inline;
+    justify-content: center;
+    padding: 10px;
+    background-color: palegoldenrod;
 }

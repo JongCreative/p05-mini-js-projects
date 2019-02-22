@@ -13,7 +13,7 @@ const voiceSelector = document.querySelector('.select-voice');
 const rate = document.querySelector('.rate-speech');
 const rateValue= document.querySelector('.rate-value');
 const pitch= document.querySelector('.pitch-speech');
-const pitchValue= document.querySelector('.pitch-value');
+const pitchValue= document.querySelector('.pitch-value');``
 
 // empty array to put all availale voices in
 let voices = [];

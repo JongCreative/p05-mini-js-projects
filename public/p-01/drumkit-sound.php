@@ -2,7 +2,7 @@
 
     //destination.PHP
 
-    include "../../db_connection.php";
+    include "../db_connection.php";
 
     $sql_querie = "SELECT * FROM drumkit";
     

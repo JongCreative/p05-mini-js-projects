@@ -1,44 +1,59 @@
 /*_________________________________________________________________________________*/
-/*      part 1 connecting to API
-/*             collect all DOM elements
+/*      part 1 connecting to API and put in array
 /*_________________________________________________________________________________*/
 
-// initialize API connection
-const synth = window.speechSynthesis;
+/* let jsonData = () => {
+    fetch(
+        'jsonData.php',
+        {method: 'GET'}
+    )
+    
+    .then(response => response.json() )
+    .then(json => console.log(json) )
+    .catch(error => console.error('error:', error) );
+}; */
+
+/*_________________________________________________________________________________*/
+/*      part 2 collect all DOM elements
+/*_________________________________________________________________________________*/
 
 // DOM elements
-const textForm = document.querySelector('.form-textToSpeech');
-const textInput = document.querySelector('.text-input');
-const voiceSelector = document.querySelector('.select-voice');
-const rate = document.querySelector('.rate-speech');
-const rateValue= document.querySelector('.rate-value');
-const pitch= document.querySelector('.pitch-speech');
-const pitchValue= document.querySelector('.pitch-value');
 
-// empty array to put all availale voices in
-let voices = [];
+const innerContainerTimeline = document.querySelector(".innerContainer-timeline");
+const wrapperTimeline = document.querySelector(".wrapper-timeline");
+const year = document.querySelector(".timeline-year");
+const title = document.querySelector(".timeline-title");
+const text = document.querySelector(".timeline-text");
+const prev = document.querySelector(".btn-prev");
+const pagination = document.querySelector(".btn-pagination");
+const next = document.querySelector(".btn-next");
+
+// empty array to put all availale timelineArticles in
+let timelineArticles = [];
 
 /*_________________________________________________________________________________*/
-/*      part 2 create function with arrow ()=>{}
-/*             fetch voices into empty voices[] array
-/*             seperate each array option with <option></option> & set attributes
-/*             display it by append/inserting <option> to <select> as a child
+/*      part 3 create function with arrow ()=>{}
+/*             fetch articles into empty timelineArticles[] array
+/*             seperate each array option with <article></article> & set attributes
+/*             display it by append/inserting <article> to .innerContainerTimeline as a child
 /*_________________________________________________________________________________*/
 
 
 // function to fetch API voices and display as dropdownlist
-const getVoices = () => {
+const timelineArticles = () => {
     console.log('start - getVoices');
 
-    voices =  synth.getVoices();
-    //console.log('fetch - voices and put in the let voices array');
-    console.log(voices);
+    data =  jsonData();
+    console.log('fetch - data and put in the let voices array');
+    //console.log(timelineArticles);
     
     //now we want to put each option in the select list.
     //first we create an element to put each array option in 
-    voices.forEach(voice => {
-        const option = document.createElement('option');
-        //console.log('created - <option> element for each voice in the voices array');
+    data.forEach(timelineArticles => {
+        console.log('start for each loop timelineArticles');
+
+        const option = document.createElement('section');
+        console.log('created - <option> element for each voice in the voices array');
 
         //<option>Google Nederlands(nl-NL)</option>
         //i will use textContent to render each voice option as <b>text only</b>. in stead of innerHTML <b>shown bold</b>
@@ -53,11 +68,11 @@ const getVoices = () => {
 /* put in array, without this array will be empty
 * https://stackoverflow.com/questions/21513706/getting-the-list-of-voices-in-speechsynthesis-of-chrome-web-speech-api
 * * */
-getVoices();
-if(synth.onvoiceschanged !== undefined){
+timelineArticles();
+/* if(synth.onvoiceschanged !== undefined){
     synth.onvoiceschanged = getVoices;
 };
-
+ */
 /*_________________________________________________________________________________*/
 /*      part 3 create function with arrow ()=>{}
 /*             possible ifs & eliminate them
